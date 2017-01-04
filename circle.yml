@@ -29,6 +29,7 @@ test:
     - docker run -it massdest/docker-centos-nginx "ps aux | grep supervisord"
     # Test if supervisorctl is working
     - docker run -it massdest/docker-centos-nginx "supervisorctl stop all"
-    
+    # Test nginx config
+    - docker run -it massdest/docker-centos-nginx "nginx -t"
     # Test if we have inotify working
     - docker run -it massdest/docker-centos-nginx "inotifywatch -t 1 /home | tee /tmp/out"

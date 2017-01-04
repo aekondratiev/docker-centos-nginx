@@ -27,6 +27,8 @@ test:
     - docker run -d massdest/docker-centos-nginx "ps aux"
     # Test if supervisord is running
     - docker run -it massdest/docker-centos-nginx "ps aux | grep supervisord"
+    # Test nginx is working
+    - docker run -it massdest/docker-centos-nginx "curl http://localhost/"
     # Test if supervisorctl is working
     - docker run -it massdest/docker-centos-nginx "supervisorctl stop all"
     
